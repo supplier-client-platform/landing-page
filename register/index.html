@@ -46,6 +46,9 @@
     <!-- OneUI CSS framework -->
     <link rel="stylesheet" id="css-main" href="./assets/css/oneui.css">
 
+    <!-- Google Map -->
+    <link href="./assets/css/map/googlemap.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body style="">
@@ -71,14 +74,14 @@
                             <li>
                                 <a class="inactive" href="#validation-step2" data-toggle="tab">2. Company Details</a>
                             </li>
+                            <!--<li>-->
+                                <!--<a class="inactive" href="#validation-step3" data-toggle="tab">3. Payment Plan</a>-->
+                            <!--</li>-->
                             <li>
-                                <a class="inactive" href="#validation-step3" data-toggle="tab">3. Payment Plan</a>
+                                <a class="inactive" href="#validation-step3" data-toggle="tab">4. Terms </a>
                             </li>
                             <li>
-                                <a class="inactive" href="#validation-step4" data-toggle="tab">4. Terms </a>
-                            </li>
-                            <li>
-                                <a class="inactive" href="#validation-step5" data-toggle="tab">5. Finish</a>
+                                <a class="inactive" href="#validation-step4" data-toggle="tab">5. Finish</a>
                             </li>
                         </ul>
                         <!-- END Step Tabs -->
@@ -104,8 +107,8 @@
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-2">
                                                 <div class="form-material form-material-primary">
-                                                    <input class="form-control" type="text" id="validation-firstname" name="validation-firstname" placeholder="Please enter your firstname">
-                                                    <label for="validation-firstname">Full Name</label>
+                                                    <input class="form-control" type="text" id="firstname" name="firstname" placeholder="Please enter your firstname">
+                                                    <label for="firstname">Full Name</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -113,8 +116,8 @@
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-2">
                                                 <div class="form-material form-material-primary">
-                                                    <input class="form-control" type="text" id="validation-nic" name="validation-nic" placeholder="Please enter your NIC number">
-                                                    <label for="validation-lastname">NIC</label>
+                                                    <input class="form-control" type="text" id="nic" name="nic" placeholder="Please enter your NIC number">
+                                                    <label for="nic">NIC</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -122,8 +125,8 @@
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-2">
                                                 <div class="form-material form-material-primary">
-                                                    <input class="form-control" type="email" id="validation-email" name="validation-email" placeholder="Please enter your personal email address">
-                                                    <label for="validation-email">Personal Email</label>
+                                                    <input class="form-control" type="email" id="personal_email" name="personal_email" placeholder="Please enter your personal email address">
+                                                    <label for="personal_email">Personal Email</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -131,14 +134,11 @@
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-2">
                                                 <div class="form-material form-material-primary">
-                                                    <input class="form-control" type="text" id="validation-contact" name="validation-contact" placeholder="Please enter your personal contact number">
-                                                    <label for="validation-lastname">Personal Contact</label>
+                                                    <input class="form-control" type="text" id="personal_contact" name="personal_contact" placeholder="Please enter your personal contact number">
+                                                    <label for="personal_contact">Personal Contact</label>
                                                 </div>
                                             </div>
                                         </div>
-
-
-
                                     </div>
                                     <!-- END Step 1 -->
 
@@ -147,11 +147,12 @@
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-2">
                                                 <div class="form-material">
-                                                    <select class="form-control" type="text" id="validation-category" name="validation-category">
+                                                    <select class="form-control" type="text" id="supplier_category" name="supplier_category">
+                                                        <option value="default">Please select a category </option>
                                                         <option value="supermarket">Supermarket</option>
                                                         <option value="food-chain">Food Chain</option>
                                                     </select>
-                                                    <label for="validation-details">Supplier Category</label>
+                                                    <label for="supplier_category">Supplier Category</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -160,8 +161,8 @@
                                             <div class="col-sm-8 col-sm-offset-2">
                                                 <div class="form-material">
 
-                                                    <input class="form-control" type="text" id="validation-company-name" name="validation-company-name" placeholder="Please enter your Company/Bussiness name">
-                                                    <label for="validation-firstname">Company/Bussiness Name</label>
+                                                    <input class="form-control" type="text" id="company_name" name="company_name" placeholder="Please enter your Company/Bussiness name">
+                                                    <label for="company_name">Company/Bussiness Name</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -169,20 +170,8 @@
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-2">
                                                 <div class="form-material">
-                                                    <input class="form-control" type="email" id="validation-company-email" name="validation-company-email" placeholder="Please enter your Company/Bussiness email address">
-                                                    <label for="validation-email">Company/Bussiness Email</label>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <div class="col-sm-8 col-sm-offset-2">
-                                                <div class="form-material">
-
-                                                    <input class="form-control" type="text" id="validation-company-contact" name="validation-company-contact" placeholder="Please enter your personal contact number">
-                                                    <label for="validation-lastname">Company/Bussiness Contact</label>
+                                                    <input class="form-control" type="email" id="company_email" name="company_email" placeholder="Please enter your Company/Bussiness email address">
+                                                    <label for="company_email">Company/Bussiness Email</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -192,129 +181,167 @@
                                             <div class="col-sm-8 col-sm-offset-2">
                                                 <div class="form-material">
 
-                                                    <select class="form-control" type="text" id="validation-city" name="validation-city">
+                                                    <input class="form-control" type="text" id="company_contact" name="company_contact" placeholder="Please enter your personal contact number">
+                                                    <label for="company_contact">Company/Bussiness Contact</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class="col-sm-8 col-sm-offset-2">
+                                                <div class="form-material">
+
+                                                    <select class="form-control" type="text" id="base_city" name="base_city">
+                                                        <option value="default">Please select a base city</option>
                                                         <option value="Sri Lanka">Colombo</option>
                                                     </select>
-                                                    <label for="validation-lastname">Base City</label>
+                                                    <label for="base_city">Base City</label>
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-8 col-sm-offset-2">
+                                                <div class="form-material">
+                                                    <input class="form-control controls" type="text" id="business_address" name="business_address"  type="text"
+                                                           placeholder="Enter a location">
+                                                    <div id="type-selector" class="controls" hidden>
+                                                        <input type="radio" name="type" id="changetype-all" checked="checked">
+                                                        <label for="changetype-all">All</label>
+
+                                                        <input type="radio" name="type" id="changetype-establishment">
+                                                        <label for="changetype-establishment">Establishments</label>
+
+                                                        <input type="radio" name="type" id="changetype-address">
+                                                        <label for="changetype-address">Addresses</label>
+
+                                                        <input type="radio" name="type" id="changetype-geocode">
+                                                        <label for="changetype-geocode">Geocodes</label>
+                                                    </div>
+                                                    <div id="map"></div>
+                                                    <label for="business_address">Business Address</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                     </div>
                                     <!-- END Step 2 -->
 
                                     <!-- Step 3 -->
-                                    <div class="tab-pane fade fade-right push-30-t push-50" id="validation-step3">
+                                    <!--<div class="tab-pane fade fade-right push-30-t push-50" id="validation-step3">-->
 
-                                        <div class="row push-20-t push-20">
-                                            <div class="col-sm-6 col-lg-4 animated fadeInUp" data-toggle="appear" data-offset="50" data-class="animated fadeInUp">
-                                                <!-- Developer Plan -->
-                                                <a class="block block-bordered block-link-hover3 text-center" href="javascript:void(0)">
-                                                    <div class="block-header">
-                                                        <h3 class="block-title">Startup</h3>
-                                                    </div>
-                                                    <div class="block-content block-content-full bg-gray-lighter">
-                                                        <div class="h1 font-w700 push-10">FREE</div>
-                                                        <div class="h5 font-w300 text-muted">Lifetime</div>
-                                                    </div>
-                                                    <div class="block-content">
-                                                        <table class="table table-borderless table-condensed">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td><strong>10 </strong> Brands</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><strong>1</strong> User</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><strong>1</strong> Branch</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><strong>Email</strong> Support</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="block-content block-content-mini block-content-full bg-gray-lighter">
-                                                        <span class="btn btn-warning btn-block">Sign Up</span>
-                                                    </div>
-                                                </a>
-                                                <!-- END Developer Plan -->
-                                            </div>
-                                            <div class="col-sm-6 col-lg-4 animated fadeInUp" data-toggle="appear" data-offset="50" data-timeout="200" data-class="animated fadeInUp">
-                                                <!-- Startup Plan -->
-                                                <a class="block block-bordered block-link-hover3 text-center" href="frontend_signup.html">
-                                                    <div class="block-header">
-                                                        <h3 class="block-title text-primary">Established</h3>
-                                                    </div>
-                                                    <div class="block-content block-content-full bg-gray-lighter">
-                                                        <div class="h1 font-w700 text-primary push-10">Rs. 1000/-</div>
-                                                        <div class="h5 font-w300 text-muted">per year</div>
-                                                    </div>
-                                                    <div class="block-content">
-                                                        <table class="table table-borderless table-condensed">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td><strong>50 </strong> Brands</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><strong>10</strong> Storage</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><strong>10</strong> Branches</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><strong>FULL</strong> Support</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="block-content block-content-mini block-content-full bg-gray-lighter">
-                                                        <span class="btn btn-block btn-default">Sign Up</span>
-                                                    </div>
-                                                </a>
-                                                <!-- END Startup Plan -->
-                                            </div>
-                                            <div class="col-sm-6 col-lg-4 animated fadeInUp" data-toggle="appear" data-offset="50" data-timeout="400" data-class="animated fadeInUp">
-                                                <!-- Business Plan -->
-                                                <a class="block block-bordered block-link-hover3 text-center" href="javascript:void(0)">
-                                                    <div class="block-header">
-                                                        <h3 class="block-title text-primary">Cooperate</h3>
-                                                    </div>
-                                                    <div class="block-content block-content-full bg-gray-lighter">
-                                                        <div class="h1 font-w700 push-10 text-primary">Rs. 5000/-</div>
-                                                        <div class="h5 font-w300 text-muted">per year</div>
-                                                    </div>
-                                                    <div class="block-content">
-                                                        <table class="table table-borderless table-condensed">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td><strong>Unlimited</strong> brands</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><strong>Unlimited</strong> users</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><strong>Unlimited</strong> Branches</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><strong>FULL</strong> Support</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="block-content block-content-mini block-content-full bg-gray-lighter">
-                                                        <span class="btn btn-block btn-default">Sign Up</span>
-                                                    </div>
-                                                </a>
-                                                <!-- END Business Plan -->
-                                            </div>
-                                        </div>
+                                        <!--<div class="row push-20-t push-20">-->
+                                            <!--<div class="col-sm-6 col-lg-4 animated fadeInUp" data-toggle="appear" data-offset="50" data-class="animated fadeInUp">-->
+                                                <!--&lt;!&ndash; Developer Plan &ndash;&gt;-->
+                                                <!--<a class="block block-bordered block-link-hover3 text-center" href="javascript:void(0)">-->
+                                                    <!--<div class="block-header">-->
+                                                        <!--<h3 class="block-title">Startup</h3>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="block-content block-content-full bg-gray-lighter">-->
+                                                        <!--<div class="h1 font-w700 push-10">FREE</div>-->
+                                                        <!--<div class="h5 font-w300 text-muted">Lifetime</div>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="block-content">-->
+                                                        <!--<table class="table table-borderless table-condensed">-->
+                                                            <!--<tbody>-->
+                                                                <!--<tr>-->
+                                                                    <!--<td><strong>10 </strong> Brands</td>-->
+                                                                <!--</tr>-->
+                                                                <!--<tr>-->
+                                                                    <!--<td><strong>1</strong> User</td>-->
+                                                                <!--</tr>-->
+                                                                <!--<tr>-->
+                                                                    <!--<td><strong>1</strong> Branch</td>-->
+                                                                <!--</tr>-->
+                                                                <!--<tr>-->
+                                                                    <!--<td><strong>Email</strong> Support</td>-->
+                                                                <!--</tr>-->
+                                                            <!--</tbody>-->
+                                                        <!--</table>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="block-content block-content-mini block-content-full bg-gray-lighter">-->
+                                                        <!--<span class="btn btn-warning btn-block">Sign Up</span>-->
+                                                    <!--</div>-->
+                                                <!--</a>-->
+                                                <!--&lt;!&ndash; END Developer Plan &ndash;&gt;-->
+                                            <!--</div>-->
+                                            <!--<div class="col-sm-6 col-lg-4 animated fadeInUp" data-toggle="appear" data-offset="50" data-timeout="200" data-class="animated fadeInUp">-->
+                                                <!--&lt;!&ndash; Startup Plan &ndash;&gt;-->
+                                                <!--<a class="block block-bordered block-link-hover3 text-center" href="frontend_signup.html">-->
+                                                    <!--<div class="block-header">-->
+                                                        <!--<h3 class="block-title text-primary">Established</h3>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="block-content block-content-full bg-gray-lighter">-->
+                                                        <!--<div class="h1 font-w700 text-primary push-10">Rs. 1000/-</div>-->
+                                                        <!--<div class="h5 font-w300 text-muted">per year</div>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="block-content">-->
+                                                        <!--<table class="table table-borderless table-condensed">-->
+                                                            <!--<tbody>-->
+                                                                <!--<tr>-->
+                                                                    <!--<td><strong>50 </strong> Brands</td>-->
+                                                                <!--</tr>-->
+                                                                <!--<tr>-->
+                                                                    <!--<td><strong>10</strong> Storage</td>-->
+                                                                <!--</tr>-->
+                                                                <!--<tr>-->
+                                                                    <!--<td><strong>10</strong> Branches</td>-->
+                                                                <!--</tr>-->
+                                                                <!--<tr>-->
+                                                                    <!--<td><strong>FULL</strong> Support</td>-->
+                                                                <!--</tr>-->
+                                                            <!--</tbody>-->
+                                                        <!--</table>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="block-content block-content-mini block-content-full bg-gray-lighter">-->
+                                                        <!--<span class="btn btn-block btn-default">Sign Up</span>-->
+                                                    <!--</div>-->
+                                                <!--</a>-->
+                                                <!--&lt;!&ndash; END Startup Plan &ndash;&gt;-->
+                                            <!--</div>-->
+                                            <!--<div class="col-sm-6 col-lg-4 animated fadeInUp" data-toggle="appear" data-offset="50" data-timeout="400" data-class="animated fadeInUp">-->
+                                                <!--&lt;!&ndash; Business Plan &ndash;&gt;-->
+                                                <!--<a class="block block-bordered block-link-hover3 text-center" href="javascript:void(0)">-->
+                                                    <!--<div class="block-header">-->
+                                                        <!--<h3 class="block-title text-primary">Cooperate</h3>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="block-content block-content-full bg-gray-lighter">-->
+                                                        <!--<div class="h1 font-w700 push-10 text-primary">Rs. 5000/-</div>-->
+                                                        <!--<div class="h5 font-w300 text-muted">per year</div>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="block-content">-->
+                                                        <!--<table class="table table-borderless table-condensed">-->
+                                                            <!--<tbody>-->
+                                                                <!--<tr>-->
+                                                                    <!--<td><strong>Unlimited</strong> brands</td>-->
+                                                                <!--</tr>-->
+                                                                <!--<tr>-->
+                                                                    <!--<td><strong>Unlimited</strong> users</td>-->
+                                                                <!--</tr>-->
+                                                                <!--<tr>-->
+                                                                    <!--<td><strong>Unlimited</strong> Branches</td>-->
+                                                                <!--</tr>-->
+                                                                <!--<tr>-->
+                                                                    <!--<td><strong>FULL</strong> Support</td>-->
+                                                                <!--</tr>-->
+                                                            <!--</tbody>-->
+                                                        <!--</table>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="block-content block-content-mini block-content-full bg-gray-lighter">-->
+                                                        <!--<span class="btn btn-block btn-default">Sign Up</span>-->
+                                                    <!--</div>-->
+                                                <!--</a>-->
+                                                <!--&lt;!&ndash; END Business Plan &ndash;&gt;-->
+                                            <!--</div>-->
+                                        <!--</div>-->
 
-                                    </div>
+                                    <!--</div>-->
                                     <!-- END Step 3 -->
 
 
-                                    <div class="tab-pane fade fade-right   push-50" id="validation-step4">
+                                    <div class="tab-pane fade fade-right   push-50" id="validation-step3">
 
 
                                         <h4>Terms and Conditions</h4>
@@ -351,7 +378,7 @@
                                         <div class="form-group">
                                             <div class="col-xs-12" style="text-align:right">
                                                 <label class="css-input switch switch-sm switch-primary">
-                                            <input type="checkbox" id="login-remember-me" name="login-remember-me"><span></span> I understand and  agree for the terms and conditions.
+                                            <input type="checkbox" id="terms_agree" name="terms_agree"><span></span> I understand and  agree for the terms and conditions.
                                         </label>
                                             </div>
 
@@ -361,7 +388,7 @@
 
                                     <!-- step 4 -->
 
-                                    <div class="tab-pane fade fade-right push-30-t push-50" id="validation-step5">
+                                    <div class="tab-pane fade fade-right push-30-t push-50" id="validation-step4">
 
                                         <div class="alert alert-success alert-dismissable">
 
@@ -424,6 +451,11 @@
     <script src="./assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
 
     <script src="./assets/js/pages/base_forms_wizard.js"></script>
+
+    <!-- Google Map -->
+    <script src="./assets/js/map/googlemap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7K-XvVx7d-9416zylsaYN1kMCUhJHvU4&libraries=places&callback=initMap"
+            async defer></script>
 </body>
 
 </html>
