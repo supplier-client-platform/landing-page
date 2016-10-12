@@ -77,6 +77,7 @@ var BaseFormWizard = function() {
                     valueNotEquals: "default"
                 },
                 'business_address': {
+                    minlength: 10,
                     required: true
                 },
                 'terms_agree': {
@@ -119,6 +120,7 @@ var BaseFormWizard = function() {
                     valueNotEquals: "Please select a base city"
                 },
                 'business_address': {
+                    minlength: 'Please enter a valid business address',
                     required: 'Please enter a business address'
                 },
                 'terms_agree': {
@@ -218,7 +220,7 @@ var BaseFormWizard = function() {
                 }
 
                 // If it's the last tab then hide the last button and show the finish instead
-                if($current >= $total) {
+                if($current >= $total-1) {
                     $btnNext.hide();
                     $btnFinish.show();
                 } else {
@@ -237,9 +239,9 @@ var BaseFormWizard = function() {
                     return false;
                 }
             },
-           /* onTabClick: function($tab, $navigation, $index) {
-                return false;
-            } */
+            // onTabClick: function($tab, $navigation, $index) {
+            //     return false;
+            // }
         });
     };
 
@@ -253,6 +255,50 @@ var BaseFormWizard = function() {
         }
     };
 }();
+
+// Send request to server to populate the city list drop down
+$.ajax({
+    type: 'get',
+    url: 'http://localhost:3334/cityList/all',
+
+    success:function(data){
+        $('#base_city').removeAttr('disabled');
+        $.each(data, function (key, value) {
+           $("#base_city").append($("<option></option>").val(key).html(value));
+        });
+
+    },
+    error: function(xhr, ajaxOptions, thrownError) {
+        console.log(thrownError);
+    }
+});
+
+
+// Send request to server to populate the category list drop down
+$.ajax({
+    type: 'get',
+    url: 'http://localhost:3334/categoryList/all',
+
+    success:function(data){
+       $('#supplier_category').removeAttr('disabled');
+        $.each(data, function (key, value) {
+            $("#supplier_category").append($("<option></option>").val(key).html(value));
+        });
+
+    },
+    error: function(xhr, ajaxOptions, thrownError) {
+        console.log(thrownError);
+    }
+});
+
+// Enable/Disable submit button when terms and conditions agreed.
+$('#terms_agree').click(function() {
+    if ($(this).is(':checked')) {
+        $('#submit').removeAttr('disabled');
+    } else {
+        $('#submit').attr('disabled', 'disabled');
+    }
+});
 
 // Custom method to validate letters only.
 jQuery.validator.addMethod("lettersonly", function(value, element) {

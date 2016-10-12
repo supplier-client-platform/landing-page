@@ -61,7 +61,7 @@
         <!-- Login Content -->
         <div class="content overflow-hidden">
             <div class="row ">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-8 col-md-offset-2" id="rootWizard">
 
                     <!-- Validation Wizard (.js-wizard-validation class is initialized in js/pages/base_forms_wizard.js) -->
                     <!-- For more examples you can check out http://vadimg.com/twitter-bootstrap-wizard-example/ -->
@@ -89,7 +89,7 @@
                         <!-- Form -->
                         <!-- jQuery Validation (.js-form2 class is initialized in js/pages/base_forms_wizard.js) -->
                         <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
-                        <form class="js-form2 form-horizontal" action="base_forms_wizard.html" method="post">
+                        <form class="js-form2 form-horizontal" onsubmit="return signUp()">
                             <!-- Steps Content -->
 
                             <!-- Steps Progress -->
@@ -147,10 +147,8 @@
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-2">
                                                 <div class="form-material">
-                                                    <select class="form-control" type="text" id="supplier_category" name="supplier_category">
+                                                    <select class="form-control" type="text" id="supplier_category" name="supplier_category" disabled>
                                                         <option value="default">Please select a category </option>
-                                                        <option value="supermarket">Supermarket</option>
-                                                        <option value="food-chain">Food Chain</option>
                                                     </select>
                                                     <label for="supplier_category">Supplier Category</label>
                                                 </div>
@@ -192,9 +190,8 @@
                                             <div class="col-sm-8 col-sm-offset-2">
                                                 <div class="form-material">
 
-                                                    <select class="form-control" type="text" id="base_city" name="base_city">
+                                                    <select class="form-control" type="text" id="base_city" name="base_city" disabled>
                                                         <option value="default">Please select a base city</option>
-                                                        <option value="Sri Lanka">Colombo</option>
                                                     </select>
                                                     <label for="base_city">Base City</label>
                                                 </div>
@@ -206,6 +203,8 @@
                                                 <div class="form-material">
                                                     <input class="form-control controls" type="text" id="business_address" name="business_address"  type="text"
                                                            placeholder="Enter a location">
+                                                    <input id="longitude" type="text" value="0" hidden>
+                                                    <input id="latitude" type="text" value="0" hidden>
                                                     <div id="type-selector" class="controls" hidden>
                                                         <input type="radio" name="type" id="changetype-all" checked="checked">
                                                         <label for="changetype-all">All</label>
@@ -410,7 +409,7 @@
                                         </div>
                                         <div class="col-xs-6 text-right">
                                             <button class="wizard-next btn btn-info" type="button">Next  </button>
-                                            <button class="wizard-finish btn btn-success" type="submit"><i class="fa fa-check-circle-o"></i> Go to Dashboard</button>
+                                            <button class="wizard-finish btn btn-success" type="submit" id="submit" disabled> Submit</button>
                                         </div>
                                     </div>
                                 </div>
@@ -433,7 +432,9 @@
             <!-- END Login Footer -->
         </div>
     </div>
+    <script>
 
+    </script>
     <script src="./assets/js/core/jquery.min.js"></script>
     <script src="./assets/js/core/bootstrap.min.js"></script>
     <script src="./assets/js/core/jquery.slimscroll.min.js"></script>
@@ -456,6 +457,11 @@
     <script src="./assets/js/map/googlemap.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7K-XvVx7d-9416zylsaYN1kMCUhJHvU4&libraries=places&callback=initMap"
             async defer></script>
+
+    <!-- SignUp -->
+    <script src="./assets/js/signup.js"></script>
+
+
 </body>
 
 </html>
