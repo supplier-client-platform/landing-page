@@ -186,6 +186,7 @@ var BaseFormWizard = function() {
                 var $btnPrev    = $wizard.find('.wizard-prev');
                 var $btnNext    = $wizard.find('.wizard-next');
                 var $btnFinish  = $wizard.find('.wizard-finish');
+                var $btnLogin   = $wizard.find('.wizard-login');
 
                 // Update progress bar if there is one
                 if ($progress) {
@@ -194,41 +195,20 @@ var BaseFormWizard = function() {
 
 
                 // If it's the last tab then hide the last button and show the finish instead
-                if($current >= $total) {
+                if($current == $total-1) {
+                    $btnLogin.hide();
                     $btnNext.hide();
                     $btnFinish.show();
+                } else if ($current >= $total) {
+                    $btnPrev.hide();
+                    $btnFinish.hide();
+                    $btnNext.hide();
+                    $btnLogin.show();
                 } else {
+                    $btnLogin.hide();
                     $btnNext.show();
                     $btnFinish.hide();
                 }
-            },
-            'onTabShow': function($tab, $navigation, $index) {
-                var $total      = $navigation.find('li').length;
-                var $current    = $index + 1;
-                var $percent    = ($current/$total) * 100;
-
-                // Get vital wizard elements
-                var $wizard     = $navigation.parents('.block');
-                var $progress   = $wizard.find('.wizard-progress > .progress-bar');
-                var $btnPrev    = $wizard.find('.wizard-prev');
-                var $btnNext    = $wizard.find('.wizard-next');
-                var $btnFinish  = $wizard.find('.wizard-finish');
-
-                // Update progress bar if there is one
-                if ($progress) {
-                    $progress.css({ width: $percent + '%' });
-                }
-
-                // If it's the last tab then hide the last button and show the finish instead
-                if($current >= $total-1) {
-                    $btnNext.hide();
-                    $btnFinish.show();
-                } else {
-                    $btnNext.show();
-                    $btnFinish.hide();
-                }
-
-
             },
             'onNext': function($tab, $navigation, $index) {
                 var $valid = $form2.valid();
@@ -239,9 +219,9 @@ var BaseFormWizard = function() {
                     return false;
                 }
             },
-            // onTabClick: function($tab, $navigation, $index) {
-            //     return false;
-            // }
+            onTabClick: function($tab, $navigation, $index) {
+                return false;
+            }
         });
     };
 

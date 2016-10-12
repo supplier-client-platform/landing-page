@@ -78,10 +78,10 @@
                                 <!--<a class="inactive" href="#validation-step3" data-toggle="tab">3. Payment Plan</a>-->
                             <!--</li>-->
                             <li>
-                                <a class="inactive" href="#validation-step3" data-toggle="tab">4. Terms </a>
+                                <a class="inactive" href="#validation-step3" data-toggle="tab">3. Terms </a>
                             </li>
                             <li>
-                                <a class="inactive" href="#validation-step4" data-toggle="tab">5. Finish</a>
+                                <a class="inactive" href="#validation-step4" data-toggle="tab">4. Finish</a>
                             </li>
                         </ul>
                         <!-- END Step Tabs -->
@@ -89,7 +89,7 @@
                         <!-- Form -->
                         <!-- jQuery Validation (.js-form2 class is initialized in js/pages/base_forms_wizard.js) -->
                         <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
-                        <form class="js-form2 form-horizontal" onsubmit="return signUp()">
+                        <form class="js-form2 form-horizontal" id="sign-up-form" onsubmit="return signUp()">
                             <!-- Steps Content -->
 
                             <!-- Steps Progress -->
@@ -203,8 +203,8 @@
                                                 <div class="form-material">
                                                     <input class="form-control controls" type="text" id="business_address" name="business_address"  type="text"
                                                            placeholder="Enter a location">
-                                                    <input id="longitude" type="text" value="0" hidden>
-                                                    <input id="latitude" type="text" value="0" hidden>
+                                                    <input id="longitude" name="longitude" type="text" value="0" hidden>
+                                                    <input id="latitude" name="latitude" type="text" value="0" hidden>
                                                     <div id="type-selector" class="controls" hidden>
                                                         <input type="radio" name="type" id="changetype-all" checked="checked">
                                                         <label for="changetype-all">All</label>
@@ -409,7 +409,8 @@
                                         </div>
                                         <div class="col-xs-6 text-right">
                                             <button class="wizard-next btn btn-info" type="button">Next  </button>
-                                            <button class="wizard-finish btn btn-success" type="submit" id="submit" disabled> Submit</button>
+                                            <button class="wizard-login btn btn-success" type="button" id="login"> Login</button>
+                                            <button class="wizard-finish btn btn-info" type="submit" id="submit" disabled> Submit</button>
                                         </div>
                                     </div>
                                 </div>
