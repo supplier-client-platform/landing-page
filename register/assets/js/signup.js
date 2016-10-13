@@ -7,41 +7,38 @@
 function signUp() {
 
     alert("Working");
-    console.log($('#sign-up-form').serialize());
+
+    $.ajax({
+        type: 'post',
+        url: sign_up_endpoint,
+        data : {
+            fullname: $('#fullname').val(),
+            nic: $('#nic').val(),
+            personal_email: $('#personal_email').val(),
+            personal_contact: $('#personal_contact').val(),
+            supplier_category: $('#supplier_category').val(),
+            company_name: $('#company_name').val(),
+            company_email: $('#company_email').val(),
+            company_contact: $('#company_contact').val(),
+            base_city: $('#base_city').val(),
+            business_address: {
+                address: $('#business_address').val(),
+                longitude: $('#longitude').val(),
+                latitude: $('#latitude').val()
+            },
+            payment_plan: "default",
+            terms_agree: $('#terms_agree').val()
+        },
+
+        success:function(data){
+            console.log(data)
+        },
+
+        error: function(xhr, ajaxOptions, thrownError) {
+            console.log(thrownError);
+        }
+    });
     $('.nav-tabs a[href="#validation-step4"]').tab('show');
 
-    // $('.login-error').remove();
-    //
-    // if (!$('.js-validation-login').hasClass('push-50-t push-50')) {
-    //     $('.js-validation-login').addClass('push-50-t push-50');
-    // }
-    //
-    // if (!jQuery('.js-validation-login').valid()) {
-    //     return false;
-    // } else {
-    //     $.ajax({
-    //         type: 'post',
-    //         url: 'http://localhost:3334/login',
-    //         data : $('#login-form').serialize(),
-    //
-    //         success:function(data){
-    //             console.log(data);
-    //             if($.type(data.name) != 'undefined' && $.type(data.name) !== 'null') {
-    //                 // alert(data.name);
-    //
-    //                 $('.js-validation-login').removeClass('push-50-t push-50');
-    //
-    //                 $('.login-title').after( "<div class='login-error text-center fadeIn'>" +
-    //                     "<p class='content-mini content-mini-full bg-warning'>" +
-    //                     "<i class='fa fa-warning fa-2x'></i> Invalid Username or Password</p></div>" );
-    //             }
-    //         },
-    //
-    //         error: function(xhr, ajaxOptions, thrownError) {
-    //             console.log(thrownError);
-    //         }
-    //     });
-    // }
-    //
      return false;
 }

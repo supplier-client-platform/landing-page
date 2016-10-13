@@ -38,7 +38,7 @@ var BaseFormWizard = function() {
                 jQuery(e).closest('.help-block').remove();
             },
             rules: {
-                'firstname': {
+                'fullname': {
                     required: true,
                     lettersonly: true,
                     minlength: 2
@@ -86,10 +86,10 @@ var BaseFormWizard = function() {
 
             },
             messages: {
-                'firstname': {
-                    required: 'Please enter a firstname',
-                    lettersonly: 'Provide a valid firstname',
-                    minlength: 'Your firstname must consist of at least 2 characters'
+                'fullname': {
+                    required: 'Please enter your full name',
+                    lettersonly: 'Provide a valid full name',
+                    minlength: 'Your full name must consist of at least 2 characters'
 
                 },
                 'nic': {
@@ -239,7 +239,7 @@ var BaseFormWizard = function() {
 // Send request to server to populate the city list drop down
 $.ajax({
     type: 'get',
-    url: 'http://localhost:3334/cityList/all',
+    url: city_list_endpoint,
 
     success:function(data){
         $('#base_city').removeAttr('disabled');
@@ -257,7 +257,7 @@ $.ajax({
 // Send request to server to populate the category list drop down
 $.ajax({
     type: 'get',
-    url: 'http://localhost:3334/categoryList/all',
+    url: category_list_endpoint,
 
     success:function(data){
        $('#supplier_category').removeAttr('disabled');
@@ -282,7 +282,7 @@ $('#terms_agree').click(function() {
 
 // Custom method to validate letters only.
 jQuery.validator.addMethod("lettersonly", function(value, element) {
-    return this.optional(element) || /^[a-z]+$/i.test(value);
+    return this.optional(element) || /^[a-zA-Z\s]+$/i.test(value);
 }, "Letters only please");
 
 // Custom method to validate nic number.

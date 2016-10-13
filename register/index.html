@@ -107,8 +107,8 @@
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-2">
                                                 <div class="form-material form-material-primary">
-                                                    <input class="form-control" type="text" id="firstname" name="firstname" placeholder="Please enter your firstname">
-                                                    <label for="firstname">Full Name</label>
+                                                    <input class="form-control" type="text" id="fullname" name="fullname" placeholder="Please enter your full name">
+                                                    <label for="fullname">Full Name</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -203,8 +203,8 @@
                                                 <div class="form-material">
                                                     <input class="form-control controls" type="text" id="business_address" name="business_address"  type="text"
                                                            placeholder="Enter a location">
-                                                    <input id="longitude" name="longitude" type="text" value="0" hidden>
-                                                    <input id="latitude" name="latitude" type="text" value="0" hidden>
+                                                    <input id="longitude" name="longitude" id="longitude" type="text" value="0" hidden>
+                                                    <input id="latitude" name="latitude" id="latitude" type="text" value="0" hidden>
                                                     <div id="type-selector" class="controls" hidden>
                                                         <input type="radio" name="type" id="changetype-all" checked="checked">
                                                         <label for="changetype-all">All</label>
@@ -433,9 +433,8 @@
             <!-- END Login Footer -->
         </div>
     </div>
-    <script>
 
-    </script>
+    <script src="/config/config.js"></script>
     <script src="./assets/js/core/jquery.min.js"></script>
     <script src="./assets/js/core/bootstrap.min.js"></script>
     <script src="./assets/js/core/jquery.slimscroll.min.js"></script>
