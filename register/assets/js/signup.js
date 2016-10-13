@@ -6,8 +6,6 @@
  */
 function signUp() {
 
-    alert("Working");
-
     $.ajax({
         type: 'post',
         url: sign_up_endpoint,
