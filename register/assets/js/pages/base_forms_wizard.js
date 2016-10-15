@@ -80,6 +80,14 @@ var BaseFormWizard = function() {
                     minlength: 10,
                     required: true
                 },
+                'password': {
+                    required: true,
+                    minlength: 6
+                },
+                'confirm_password': {
+                    required: true,
+                    equalTo: '#password'
+                },
                 'terms_agree': {
                     required: true
                 }
@@ -122,6 +130,12 @@ var BaseFormWizard = function() {
                 'business_address': {
                     minlength: 'Please enter a valid business address',
                     required: 'Please enter a business address'
+                },
+                'password': {
+                    minlength: 'Your password should have at least 6 characters.'
+                },
+                'confirm_password': {
+                    equalTo: 'This should be equal to above provided.'
                 },
                 'terms_agree': {
                     required: 'Agree the terms and conditions'

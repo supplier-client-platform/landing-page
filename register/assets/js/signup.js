@@ -13,6 +13,7 @@ function signUp() {
             fullname: $('#fullname').val(),
             nic: $('#nic').val(),
             personal_email: $('#personal_email').val(),
+            password: $('#password').val(),
             personal_contact: $('#personal_contact').val(),
             supplier_category: $('#supplier_category').val(),
             company_name: $('#company_name').val(),
@@ -36,7 +37,7 @@ function signUp() {
             console.log(thrownError);
         }
     });
-    $('.nav-tabs a[href="#validation-step4"]').tab('show');
+    $('.nav-tabs a[href="#validation-step5"]').tab('show');
 
      return false;
 }
