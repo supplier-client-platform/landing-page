@@ -19,6 +19,7 @@ function signUp() {
             company_name: $('#company_name').val(),
             company_email: $('#company_email').val(),
             company_contact: $('#company_contact').val(),
+            company_website: $('#company_website').val(),
             base_city: $('#base_city').val(),
             business_address: {
                 address: $('#business_address').val(),

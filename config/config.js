@@ -5,6 +5,6 @@
  */
 
 // Rest API endpoints.
-var sign_up_endpoint = 'http://localhost:8000/signup';
-var category_list_endpoint = 'http://localhost:3334/categoryList/all';
-var city_list_endpoint = 'http://localhost:3334/cityList/all';
+var sign_up_endpoint = 'http://localhost:8000/api/v1/users/create/new';
+var category_list_endpoint = 'http://localhost:8000/api/v1/business/categories/all';
+var city_list_endpoint = 'http://localhost:8000/api/v1/cities/all';

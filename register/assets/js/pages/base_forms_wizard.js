@@ -72,6 +72,9 @@ var BaseFormWizard = function() {
                     contact: true,
                     minlength: 10
                 },
+                'company_website': {
+                    url: true
+                },
                 'base_city': {
                     required: true,
                     valueNotEquals: "default"
@@ -122,6 +125,9 @@ var BaseFormWizard = function() {
                     required: 'Please enter a contact number',
                     minlength: 'Provide a valid contact number',
                     contact: 'Provide a valid contact number'
+                },
+                'company_website': {
+                    url: 'Please enter valid url'
                 },
                 'base_city': {
                     required: 'Please select a base city',
@@ -233,9 +239,9 @@ var BaseFormWizard = function() {
                     return false;
                 }
             },
-            onTabClick: function($tab, $navigation, $index) {
-                return false;
-            }
+            // onTabClick: function($tab, $navigation, $index) {
+            //     return false;
+            // }
         });
     };
 
@@ -258,7 +264,7 @@ $.ajax({
     success:function(data){
         $('#base_city').removeAttr('disabled');
         $.each(data, function (key, value) {
-           $("#base_city").append($("<option></option>").val(key).html(value));
+           $("#base_city").append($("<option></option>").val(value.id).html(value.city));
         });
 
     },
@@ -276,7 +282,7 @@ $.ajax({
     success:function(data){
        $('#supplier_category').removeAttr('disabled');
         $.each(data, function (key, value) {
-            $("#supplier_category").append($("<option></option>").val(key).html(value));
+            $("#supplier_category").append($("<option></option>").val(value.id).html(value.name));
         });
 
     },
