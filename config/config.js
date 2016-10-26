@@ -5,6 +5,10 @@
  */
 
 // Rest API endpoints.
-var sign_up_endpoint = 'http://localhost:8000/api/v1/users/create/new';
-var category_list_endpoint = 'http://localhost:8000/api/v1/business/categories/all';
-var city_list_endpoint = 'http://localhost:8000/api/v1/cities/all';
+//
+
+var host  = 'http://dev.sc-platform.api.reactive-solutions.xyz/api/v1/';
+
+var sign_up_endpoint = host+'users/create/new';
+var category_list_endpoint =  host+'business/categories/all';
+var city_list_endpoint =  host+'cities/all';
