@@ -239,18 +239,14 @@ var BaseFormWizard = function() {
                     return false;
                 }
             },
-            // onTabClick: function($tab, $navigation, $index) {
-            //     return false;
-            // }
+            onTabClick: function($tab, $navigation, $index) {
+                return false;
+            }
         });
     };
 
     return {
         init: function () {
-            // Init simple wizard
-            // initWizardSimple();
-
-            // Init wizards with validation
             initWizardValidation();
         }
     };
